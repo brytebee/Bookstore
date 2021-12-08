@@ -13,7 +13,7 @@ export default function BookCard() {
       category: 'Finance',
     },
     {
-      author: 'Robert Kiyosaki',
+      author: 'Napoleon Hill',
       title: 'Think and Grow Rich',
       category: 'Personal Development',
     },
