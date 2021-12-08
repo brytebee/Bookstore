@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
+  BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
 import Books from './redux/books/books';
 import Categories from './redux/categories/categories';
@@ -14,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <nav>
-        <div id="logo">Bookstore</div>
+        <h1 id="logo">Bookstore CMS</h1>
         <ul>
           <li>
             <Link to="/">Books</Link>

@@ -1,7 +1,13 @@
+import BookCard from './BookCard';
+import Form from './Form';
+
 const Books = () => (
   <div>
     <h1>Books</h1>
-    <p>Temporary Books</p>
+    <BookCard />
+    <BookCard />
+    <BookCard />
+    <Form />
   </div>
 );
 
