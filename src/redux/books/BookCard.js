@@ -52,9 +52,3 @@ export default function BookCard() {
     </div>
   );
 }
-
-// BookCard.propsTypes = {
-//   category: PropTypes.string,
-//   title: PropTypes.string,
-//   author: PropTypes.string,
-// };
