@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router, Routes, Route, Link,
-} from 'react-router-dom';
-import Books from './components/books/books';
-import Categories from './components/categories/categories';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Books from './components/books/Books';
+import Categories from './components/categories/Categories';
 import './index.css';
 
 ReactDOM.render(
@@ -28,5 +26,5 @@ ReactDOM.render(
       </Routes>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
