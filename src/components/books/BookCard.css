@@ -1,0 +1,13 @@
+.container {
+  border-bottom: 1px solid lightblue;
+  display: flex;
+  padding: 16px 0;
+  justify-content: space-around;
+}
+
+.info-btn {
+  border: none;
+  margin: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
