@@ -1,9 +1,10 @@
 import {
   BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
+/* eslint-disable */
 import Books from './books/Books.js';
 import Categories from './categories/Categories.js';
-
+/* eslint-enable */
 import './App.css';
 
 const App = () => (
