@@ -1,11 +1,7 @@
-import {
-  BrowserRouter as Router, Routes, Route, Link,
-} from 'react-router-dom';
-/* eslint-disable */
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
 import Books from './books/Books';
 import Categories from './categories/Categories';
-/* eslint-enable */
-import './App.css';
 
 const App = () => (
   <Router>
