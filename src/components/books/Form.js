@@ -17,7 +17,7 @@ export default function Form() {
     setTitle(event.target.value);
   };
   const categoryHandler = (event) => {
-    if (event.target.value !== 'Choose category') {
+    if (!event.target.defaultValue) {
       setCategory(event.target.value);
     }
   };
@@ -33,6 +33,7 @@ export default function Form() {
     dispatch(addBook(newBook));
     setTitle('');
     setAuthor('');
+    setCategory('Choose category');
   };
 
   return (
@@ -60,7 +61,7 @@ export default function Form() {
         onChange={categoryHandler}
         required
       >
-        <option value="Choose category">Choose category</option>
+        <option defaultValue="Choose category">Choose category</option>
         <option value="Movies">Movies</option>
         <option value="Music">Music</option>
         <option value="Programming">Programming</option>
