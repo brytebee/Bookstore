@@ -12,7 +12,6 @@ This project is used to display a list of books. Users can add/remove books from
 ## Live Demo
 
 View the [Coming Soon...](https://brytebee.github.io/Bookstore) here ☕
-![145400205-9ae8e0a2-5f45-4073-b67b-3266777873a7](https://user-images.githubusercontent.com/27709832/145400358-762eca6e-feb2-4a4a-be7d-4cc5aed779bf.png)
 
 ## Built With
 
