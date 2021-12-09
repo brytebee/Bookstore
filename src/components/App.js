@@ -2,8 +2,8 @@ import {
   BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
 import './App.css';
-import Books from './books/Books';
-import Categories from './categories/Categories';
+import Books from './books/books';
+import Categories from './categories/categories';
 
 const App = () => (
   <Router>
