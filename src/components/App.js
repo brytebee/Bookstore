@@ -1,11 +1,9 @@
 import {
   BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
-/* eslint-disable */
-import Books from './books/Books.js';
-import Categories from './categories/Categories.js';
-/* eslint-enable */
 import './App.css';
+import Books from './books/Books';
+import Categories from './categories/Categories';
 
 const App = () => (
   <Router>
