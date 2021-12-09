@@ -1,14 +1,17 @@
+import { useSelector } from 'react-redux';
 import BookCard from './BookCard';
 import Form from './Form';
 
-const Books = () => (
-  <div>
-    <h1>Books</h1>
-    <BookCard />
-    <BookCard />
-    <BookCard />
-    <Form />
-  </div>
-);
+const Books = () => {
+  const allBooks = useSelector((state) => state.booksReducer);
+  return (
+    <div>
+      {allBooks.map((book) => (
+        <BookCard book={book} key={book.id} />
+      ))}
+      <Form />
+    </div>
+  );
+};
 
 export default Books;
