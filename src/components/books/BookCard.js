@@ -1,38 +1,25 @@
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+import { removeBook } from '../../redux/books/books';
 import './BookCard.css';
 
-export default function BookCard() {
-  const books = [
-    {
-      author: 'Robert Kiyosaki',
-      title: 'Rich Dad, Poor Dad',
-      category: 'Finance',
-    },
-    {
-      author: 'George S. Clason',
-      title: 'The Richest Man in Babylon',
-      category: 'Finance',
-    },
-    {
-      author: 'Napoleon Hill',
-      title: 'Think and Grow Rich',
-      category: 'Personal Development',
-    },
-  ];
-
-  const { category, title, author } = books[0];
-
+export default function BookCard({ book }) {
+  const dispatch = useDispatch();
+  const deleteHandler = () => {
+    dispatch(removeBook(book.id));
+  };
   return (
     <div className="container">
       <div id="book-info">
-        <h3>{category}</h3>
-        <h2>{title}</h2>
-        <p>{author}</p>
+        <h3>{book.category}</h3>
+        <h2>{book.title}</h2>
+        <p>{book.author}</p>
         <div>
           <button className="info-btn" type="button">
             Comment
           </button>
 
-          <button className="info-btn" type="button">
+          <button className="info-btn" type="button" onClick={deleteHandler}>
             Remove
           </button>
 
@@ -52,3 +39,12 @@ export default function BookCard() {
     </div>
   );
 }
+
+BookCard.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string,
+    author: PropTypes.string,
+    category: PropTypes.string,
+    id: PropTypes.string,
+  }).isRequired,
+};
