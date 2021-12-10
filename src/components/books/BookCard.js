@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBook } from '../../redux/books/books';
+import { removeBookFromStore } from '../../redux/books/books';
 import './BookCard.css';
 
 export default function BookCard({ book }) {
   const dispatch = useDispatch();
   const deleteHandler = () => {
-    dispatch(removeBook(book.id));
+    dispatch(removeBookFromStore(book.id));
   };
   return (
     <div className="container">
