@@ -13,7 +13,7 @@ const Books = () => {
   return (
     <div>
       {allBooks.map((book) => (
-        <BookCard book={book} key={book.id} />
+        <BookCard book={book} key={book.item_id} />
       ))}
       <Form />
     </div>

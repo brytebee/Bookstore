@@ -16,9 +16,9 @@ export const addBook = (payload) => ({
   },
 });
 
-export const removeBook = (items) => ({
+export const removeBook = (id) => ({
   type: REMOVE_BOOK,
-  payload: items,
+  id,
 });
 
 export const getBook = (allBooks) => ({
@@ -40,14 +40,13 @@ export const addNewBook = (newBook) => async (dispatch) => {
 export const getBooks = () => async (dispatch) => {
   const books = await fetch(baseUrl);
   const bookData = await books.json();
-  console.log(bookData);
   dispatch(getBook(bookData));
 };
 
 export const removeBookFromStore = (id) => async (dispatch) => {
   await fetch(`${baseUrl}${id}`, {
     method: 'DELETE',
-    body: JSON.stringify({}),
+    body: JSON.stringify({ item_id: id }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -60,7 +59,7 @@ const bookReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.id);
     case GET_BOOK:
       return Object.entries(action.payload).map(([key, value]) => {
         const [book] = value;

@@ -10,9 +10,9 @@ export default function Form() {
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const authorHandler = (event) => {
-    setAuthor(event.target.value);
-  };
+  // const authorHandler = (event) => {
+  //   setAuthor(event.target.value);
+  // };
   const tileHandler = (event) => {
     setTitle(event.target.value);
   };
@@ -47,14 +47,14 @@ export default function Form() {
         value={title}
         required
       />
-      <input
+      {/* <input
         type="text"
         className="author"
         placeholder="Book author"
         onChange={authorHandler}
         value={author}
         required
-      />
+      /> */}
       <select
         name="category"
         value={category}
