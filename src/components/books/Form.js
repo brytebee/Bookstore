@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { addNewBook } from '../../redux/books/books';
 import './Form.css';
 
 export default function Form() {
@@ -30,7 +30,7 @@ export default function Form() {
       author,
       category,
     };
-    dispatch(addBook(newBook));
+    dispatch(addNewBook(newBook));
     setTitle('');
     setAuthor('');
     setCategory('Choose category');
