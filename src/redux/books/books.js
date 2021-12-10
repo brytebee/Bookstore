@@ -2,8 +2,8 @@ const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
 const GET_BOOK = 'bookStore/books/GET_BOOK';
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/0MxoaYAlLWZ6BQnrAqvb/books/';
-const randomCompletion = () => Math.floor(Math.random * 100);
-const chapter = () => Math.floor(Math.random * 100);
+export const randomCompletion = () => Math.floor(Math.random() * 100);
+export const chapter = () => Math.floor(Math.random() * 20) + 1;
 
 const initialState = [];
 
@@ -13,18 +13,17 @@ export const addBook = (payload) => ({
     ...payload,
     progress: randomCompletion(),
     chapter: chapter(),
-    author: 'Bright',
   },
 });
 
-export const removeBook = (id) => ({
+export const removeBook = (items) => ({
   type: REMOVE_BOOK,
-  id,
+  payload: items,
 });
 
-export const getBook = (payload) => ({
+export const getBook = (allBooks) => ({
   type: GET_BOOK,
-  payload,
+  payload: allBooks,
 });
 
 export const addNewBook = (newBook) => async (dispatch) => {
@@ -41,13 +40,14 @@ export const addNewBook = (newBook) => async (dispatch) => {
 export const getBooks = () => async (dispatch) => {
   const books = await fetch(baseUrl);
   const bookData = await books.json();
+  console.log(bookData);
   dispatch(getBook(bookData));
 };
 
 export const removeBookFromStore = (id) => async (dispatch) => {
   await fetch(`${baseUrl}${id}`, {
     method: 'DELETE',
-    body: JSON.stringify({ item_id: id }),
+    body: JSON.stringify({}),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -69,7 +69,6 @@ const bookReducer = (state = initialState, action) => {
           ...book,
           progress: randomCompletion(),
           chapter: chapter(),
-          author: 'Bright',
         };
       });
     default:
