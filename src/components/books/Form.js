@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { addNewBook } from '../../redux/books/books';
 import './Form.css';
 
 export default function Form() {
@@ -10,9 +10,6 @@ export default function Form() {
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const authorHandler = (event) => {
-    setAuthor(event.target.value);
-  };
   const tileHandler = (event) => {
     setTitle(event.target.value);
   };
@@ -25,12 +22,12 @@ export default function Form() {
   const submitBookToStore = (e) => {
     e.preventDefault();
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
       category,
     };
-    dispatch(addBook(newBook));
+    dispatch(addNewBook(newBook));
     setTitle('');
     setAuthor('');
     setCategory('Choose category');
@@ -45,14 +42,6 @@ export default function Form() {
         placeholder="Book title"
         onChange={tileHandler}
         value={title}
-        required
-      />
-      <input
-        type="text"
-        className="author"
-        placeholder="Book author"
-        onChange={authorHandler}
-        value={author}
         required
       />
       <select
