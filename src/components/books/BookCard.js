@@ -36,7 +36,10 @@ export default function BookCard({ book }) {
           </button>
         </div>
       </div>
-      <div id="progress-bar">{randomCompletion()}% Completed</div>
+      <div id="progress-bar">
+        {randomCompletion()}
+        % Completed
+      </div>
       <div id="progress-info">
         <h3>Current Chapter</h3>
         <p>
