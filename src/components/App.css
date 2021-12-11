@@ -3,11 +3,37 @@
   margin: 0;
 }
 
-nav {
+.panel-bg {
+  margin: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 black;
+  background-color: white;
+}
+
+.bookstore-CMS {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.875rem;
+  font-weight: 900;
+  color: #0290ff;
+}
+/* nav {
   min-height: 10vh;
   background-color: rgb(41, 45, 46);
   color: white;
   align-items: center;
+  display: flex;
+  justify-content: space-around;
+} */
+
+/* nav {
+  width: 87.5rem;
+  height: 1.938rem;
+  margin: 0 0 2.375rem;
+
+  background-color: #fff;
   display: flex;
   justify-content: space-around;
 }
@@ -45,4 +71,4 @@ a:-webkit-any-link {
 
 form {
   margin: 32px 0;
-}
+} */
