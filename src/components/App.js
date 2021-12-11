@@ -6,9 +6,9 @@ import Books from './books/books';
 import Categories from './categories/categories';
 
 const App = () => (
-  <div className="panel-bg">
-    <Router>
-      <nav>
+  <Router>
+    <nav className="navbar page-main-margin">
+      <div className="nav-items">
         <h1 className="bookstore-CMS" id="logo">
           Bookstore CMS
         </h1>
@@ -20,13 +20,16 @@ const App = () => (
             <Link to="/categories">Categories</Link>
           </li>
         </ul>
-      </nav>
+      </div>
+      <div className="oval">
+        <i className="fas fa-user-circle fa-2x" />
+      </div>
+    </nav>
 
-      <Routes>
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/" element={<Books />} />
-      </Routes>
-    </Router>
-  </div>
+    <Routes>
+      <Route path="/categories" element={<Categories />} />
+      <Route path="/" element={<Books />} />
+    </Routes>
+  </Router>
 );
 export default App;

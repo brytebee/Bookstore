@@ -1,11 +1,8 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  chapter,
-  randomCompletion,
-  removeBookFromStore,
-} from '../../redux/books/books';
+import { chapter, removeBookFromStore } from '../../redux/books/books';
 import '../App.css';
+import Bookprogress from './progress';
 
 export default function BookCard({ book }) {
   const dispatch = useDispatch();
@@ -13,11 +10,10 @@ export default function BookCard({ book }) {
     dispatch(removeBookFromStore(id));
   };
   return (
-    <div className="container">
+    <div className="container page-main-margin">
       <div id="book-info">
-        <h3>{book.category}</h3>
-        <h2>{book.title}</h2>
-        <p>{book.author}</p>
+        <h4 className="my-grey">{book.category}</h4>
+        <h2 className="montseratt">{book.title}</h2>
         <div>
           <button className="info-btn" type="button">
             Comment
@@ -37,16 +33,17 @@ export default function BookCard({ book }) {
         </div>
       </div>
       <div id="progress-bar">
-        {randomCompletion()}
-        % Completed
+        <Bookprogress progress={book.progress} />
       </div>
       <div id="progress-info">
-        <h3>Current Chapter</h3>
-        <p>
+        <p>Current Chapter</p>
+        <h3 className="chapter">
           Chapter:
           {chapter()}
-        </p>
-        <button type="button">Update progress</button>
+        </h3>
+        <button className="update-btn" type="button">
+          Update progress
+        </button>
       </div>
     </div>
   );
