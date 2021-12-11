@@ -7,7 +7,7 @@ import Categories from './categories/categories';
 
 const App = () => (
   <Router>
-    <nav className="navbar page-main-margin">
+    <nav className="navbar">
       <div className="nav-items">
         <h1 className="bookstore-CMS" id="logo">
           Bookstore CMS
