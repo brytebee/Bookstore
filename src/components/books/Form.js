@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addNewBook } from '../../redux/books/books';
-import './Form.css';
+import '../App.css';
 
 export default function Form() {
   const [title, setTitle] = useState('');

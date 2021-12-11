@@ -28,3 +28,21 @@ a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
 }
+
+.container {
+  border-bottom: 1px solid lightblue;
+  display: flex;
+  padding: 16px 0;
+  justify-content: space-around;
+}
+
+.info-btn {
+  border: none;
+  margin: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+form {
+  margin: 32px 0;
+}

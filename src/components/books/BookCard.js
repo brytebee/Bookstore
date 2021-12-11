@@ -5,7 +5,7 @@ import {
   randomCompletion,
   removeBookFromStore,
 } from '../../redux/books/books';
-import './BookCard.css';
+import '../App.css';
 
 export default function BookCard({ book }) {
   const dispatch = useDispatch();
