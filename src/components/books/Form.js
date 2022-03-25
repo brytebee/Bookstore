@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addNewBook } from '../../redux/books/books';
-import './Form.css';
+import '../App.css';
 
 export default function Form() {
   const [title, setTitle] = useState('');
@@ -34,32 +34,37 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={submitBookToStore}>
-      <h2>Add a book</h2>
-      <input
-        type="text"
-        className="title"
-        placeholder="Book title"
-        onChange={tileHandler}
-        value={title}
-        required
-      />
-      <select
-        name="category"
-        value={category}
-        onChange={categoryHandler}
-        required
-      >
-        <option defaultValue="Choose category">Choose category</option>
-        <option value="Movies">Movies</option>
-        <option value="Music">Music</option>
-        <option value="Programming">Programming</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Science fiction">Science fiction</option>
-        <option value="Finance">Finance</option>
-        <option value="Personal Development">Personal Development</option>
-      </select>
-      <input className="submit" type="submit" value="Add book" />
-    </form>
+    <div className="form-top page-main-margin">
+      <h2 className="montseratt form-title my-grey">Add a book</h2>
+      <form onSubmit={submitBookToStore}>
+        <input
+          type="text"
+          className="title form-input"
+          placeholder="Book title"
+          onChange={tileHandler}
+          value={title}
+          required
+        />
+        <div className="opt-btn">
+          <select
+            name="category"
+            value={category}
+            onChange={categoryHandler}
+            className="form-input"
+            required
+          >
+            <option defaultValue="Choose category">Choose category</option>
+            <option value="Movies">Movies</option>
+            <option value="Music">Music</option>
+            <option value="Programming">Programming</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Science fiction">Science fiction</option>
+            <option value="Finance">Finance</option>
+            <option value="Personal Development">Personal Development</option>
+          </select>
+          <input className="submit" type="submit" value="Add book" />
+        </div>
+      </form>
+    </div>
   );
 }

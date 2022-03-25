@@ -7,16 +7,23 @@ import Categories from './categories/categories';
 
 const App = () => (
   <Router>
-    <nav>
-      <h1 id="logo">Bookstore CMS</h1>
-      <ul>
-        <li>
-          <Link to="/">Books</Link>
-        </li>
-        <li>
-          <Link to="/categories">Categories</Link>
-        </li>
-      </ul>
+    <nav className="navbar">
+      <div className="nav-items">
+        <h1 className="bookstore-CMS" id="logo">
+          Bookstore CMS
+        </h1>
+        <ul>
+          <li>
+            <Link to="/">Books</Link>
+          </li>
+          <li>
+            <Link to="/categories">Categories</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="oval">
+        <i className="fas fa-user-circle fa-2x" />
+      </div>
     </nav>
 
     <Routes>
